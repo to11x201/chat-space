@@ -1,0 +1,28 @@
+.chat
+  .chat-header
+    .chat-header__name
+      test
+    .chat-header__member
+      Member:hiro
+    .chat-header__edit-btn
+      = link_to "#" do
+        Edit
+    
+
+  .chat-main
+    .chat-main__content
+      .chat-main__content__name
+        hiro
+      .chat-main__content__day
+        2019/11/20(Wed) 17:43:01
+      .chat-main__content__message
+        おはよう
+
+  .chat-fooder
+    %form.new_message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn"}

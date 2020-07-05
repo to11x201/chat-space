@@ -1,0 +1,18 @@
+.side-bar
+  .side-bar__header
+    .side-bar__header__block
+      %p.side-bar__header__block__username
+        hiro
+      %ul.side-bar__header__block__menu
+        %li.side-bar__header__block__edit-user
+          = link_to "#" do
+            = icon('fas', 'edit')
+        %li.side-bar__header__block__new-group
+          = link_to "#" do
+            = icon('fas', 'cog')
+  .side-bar__group
+    = link_to "#", class:"group"  do
+      .group__group-name
+        techcamp
+      .group__latest-message
+        まだメッセージがありません
