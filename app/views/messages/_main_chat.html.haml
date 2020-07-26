@@ -1,13 +1,16 @@
 .chat
   .chat-header
-    .chat-header__name
-      test
-    .chat-header__member
-      Member:hiro
-    .chat-header__edit-btn
-      = link_to "#" do
-        Edit
+    - current_user.groups.each do |group|
+      .chat-header__name
+        = group.name
+      .chat-header__member
+        = current_user.name
+      .chat-header__edit-btn
+        = link_to edit_user_path(current_user) do
+          Edit
     
+  .messages
+    = render @messages
 
   .chat-main
     .chat-main__content
@@ -19,10 +22,13 @@
         おはよう
 
   .chat-fooder
-    %form.new_message
-      .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btn"}
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'form__message__image__hidden'
+        = f.submit 'Send', class: 'form__submit'
+
+  
