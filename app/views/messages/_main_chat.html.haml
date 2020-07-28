@@ -1,25 +1,24 @@
 .chat
   .chat-header
-    - current_user.groups.each do |group|
-      .chat-header__name
-        = group.name
-      .chat-header__member
-        = current_user.name
-      .chat-header__edit-btn
-        = link_to edit_user_path(current_user) do
-          Edit
+    .chat-header__name
+      = @group.name
+    .chat-header__member
+      = current_user.name
+    .chat-header__edit-btn
+      = link_to edit_user_path(current_user) do
+        Edit
     
   .messages
     = render @messages
 
-  .chat-main
-    .chat-main__content
-      .chat-main__content__name
-        hiro
-      .chat-main__content__day
-        2019/11/20(Wed) 17:43:01
-      .chat-main__content__message
-        おはよう
+  -# .chat-main
+  -#   .chat-main__content
+  -#     .chat-main__content__name
+  -#       hiro
+  -#     .chat-main__content__day
+  -#       2019/11/20(Wed) 17:43:01
+  -#     .chat-main__content__message
+  -#       おはよう
 
   .chat-fooder
     .form
