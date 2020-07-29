@@ -29,12 +29,14 @@
   &__group {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
-    padding: 20px;
-    .group {
+    padding: 20px ;
+
+    .group__group-name {
       color: white;
-      text-decoration: none;
-      margin-bottom: 40px;
-  
+    }
+
+    .group__latest-message {
+      color: white;
     }
   }
 }
